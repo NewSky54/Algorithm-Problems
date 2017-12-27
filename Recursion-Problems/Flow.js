@@ -12,6 +12,10 @@ function flow(input, funcArray){
     }
     return input;
 }
+//Refactored 
+function flow(input, funcArray, counter = 0){
+   return (counter !== 4) ? flow(input = funcArray[counter](input), funcArray, counter+=1) : input;
+}
 function multiplyBy2(num) { return num * 2; } 
 function add7(num) { return num + 7; } 
 function modulo4(num) { return num % 4; } 
